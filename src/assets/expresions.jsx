@@ -1,6 +1,6 @@
 function Expresiones() {
   const nombre = "Rene David";
-  const apellidos = "Cabrera Gonzalezz";
+  const apellidos = "Cabrera Gonzalez";
 
   return (
     <div>
@@ -21,27 +21,22 @@ function Lista() {
   ];
 
   return (
-    <div>
-      <table>
-        <tbody>
-          <tr>
-            <th>Nombre</th>
-            <th>Role</th>
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Role</th>
+        </tr>
+      </thead>
+      <tbody>
+        {users.map((user) => (
+          <tr key={user.id}>
+            <td>{user.name}</td>
+            <td>{user.role}</td>
           </tr>
-
-          <tr>
-            {users.map(function (user, index) {
-              return (
-                <tr key={index}>
-                  <td>{user.name}</td>
-                  <td>{user.role}</td>
-                </tr>
-              );
-            })}
-          </tr>
-        </tbody>
-      </table>
-    </div>
+        ))}
+      </tbody>
+    </table>
   );
 }
 

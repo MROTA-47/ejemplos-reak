@@ -1,48 +1,35 @@
-import logo from './assets/logo.jpg';
+import logo from "./assets/logo.jpg";
+import imgWhats from "./assets/whatsapp.png";
+import imgYoutube from "./assets/youtube.png";
+import imgLinkedin from "./assets/linkedin.png";
 
 function Encabezado() {
   return (
-    <header>
-      <h1>Encabezado</h1>
+    <header className="barra-superior">
 
-      <Logotipo />
-      <Menu />
-      <Redes />
+      {}
+      <div className="logo-izq">
+        <img src={logo} alt="Logo" />
+      </div>
+
+      {}
+      <div className="menu-cuadro">
+        <ul>
+          <li>Inicio</li>
+          <li>Acerca de</li>
+          <li>Productos</li>
+          <li>Contactos</li>
+          <li>Sucursales</li>
+        </ul>
+
+        <div className="redes-der">
+          <img src={imgWhats} alt="WhatsApp" />
+          <img src={imgYoutube} alt="YouTube" />
+          <img src={imgLinkedin} alt="LinkedIn" />
+        </div>
+      </div>
+
     </header>
-  );
-}
-
-function Logotipo() {
-  return (
-    <div className="logotipo">
-      <img src={logo} alt="Logo" width="120" />
-    </div>
-  );
-}
-
-function Menu() {
-  return (
-    <nav>
-      <ul>
-        <li>Inicio</li>
-        <li>Acerca de</li>
-        <li>Productos</li>
-        <li>Contactos</li>
-        <li>Sucursales</li>
-      </ul>
-    </nav>
-  );
-}
-
-function Redes() {
-  return (
-    <div className="redes">
-      <ul>
-        <li>WhatsApp</li>
-        <li>YouTube</li>
-        <li>LinkedIn</li>
-      </ul>
-    </div>
   );
 }
 
