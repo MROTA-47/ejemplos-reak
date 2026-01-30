@@ -1,126 +1,90 @@
-
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
-  background: radial-gradient(circle at top, #2f2f2f, #0f0f0f);
-  color: #e5e7eb;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(180deg, #0a0a0a, #121212, #1a1a1a);
+  color: #2be478;
 }
 
-
-.pagina {
-  width: 100%;
-  min-height: 100vh;
-}
-
-
-.seccion {
-  width: 100%;
-  padding: 50px 80px;
-}
-
-.tarjetas {
+.barra-superior {
   display: flex;
-  gap: 30px;
-  justify-content: space-between;
+  align-items: center;
+  padding: 22px;
+  gap: 18px;
+}
+
+.logo-izq img {
+  width: 120px;
+  border-radius: 14px;
 }
 
 
-.card {
-  flex: 1;
-  background: linear-gradient(180deg, #2b2b2b, #1a1a1a);
-  padding: 28px;
-  border-radius: 18px;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.15),
-    0 10px 25px rgba(0,0,0,0.8);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+.menu-cuadro {
+  background: linear-gradient(145deg, #0f3d1f, #0a2b16);
+  padding: 28px 44px;
+  border-radius: 28px;
 
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.25),
-    0 14px 35px rgba(0,0,0,0.95);
-}
-
-.card h3 {
-  margin-top: 0;
-  font-size: 20px;
-  color: #6dff8f;
-  text-shadow: 0 0 8px rgba(109,255,143,0.6);
-}
-
-.card p {
-  color: #d1d5db;
-}
-
-
-.contenido-principal {
-  width: 100%;
-  padding: 70px 80px;
-  background: linear-gradient(180deg, #1f1f1f, #111111);
-  border-top: 2px solid #2bdc6a;
-  border-bottom: 2px solid #2bdc6a;
-}
-
-.contenido-principal h1 {
-  margin-top: 0;
-  font-size: 34px;
-  color: #7bff9d;
-  text-shadow: 0 0 10px rgba(123,255,157,0.6);
-}
-
-.contenido-principal p {
-  font-size: 18px;
-  line-height: 1.7;
-  max-width: 1200px;
-  color: #e5e7eb;
-}
-
-.navegacion {
-  width: 100%;
-  padding: 45px 80px;
   display: flex;
-  justify-content: space-between;
-  background: linear-gradient(180deg, #1b1b1b, #0b0b0b);
-  border-top: 2px solid #2bdc6a;
+  align-items: center;
+  gap: 42px;
+
+  width: 100%;
+  max-width: 980px;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    inset 0 -1px 0 rgba(0,0,0,0.8),
+    0 0 20px rgba(0,255,120,0.25),
+    0 15px 40px rgba(0,0,0,0.8);
 }
 
-.btn {
-  padding: 15px 50px;
-  font-size: 18px;
-  font-weight: bold;
-  border-radius: 40px;
-  border: none;
+.menu-cuadro ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  gap: 32px;
+}
+
+.menu-cuadro li {
   cursor: pointer;
-  letter-spacing: 0.5px;
-  transition: all 0.3s ease;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+
+  padding: 6px 12px;
+  border-radius: 12px;
+  color: #cfcfcf;
+  transition: all 0.25s ease;
 }
 
-.izquierda {
-  background: linear-gradient(180deg, #6dff8f, #1db954);
-  color: #0b0b0b;
-  box-shadow: 0 0 15px rgba(45,220,106,0.6);
+/* hover verde neón */
+.menu-cuadro li:hover {
+  color: #a7ffcb;
+  background: rgba(0, 17, 255, 0.12);
+  box-shadow:
+    0 0 10px rgba(0,255,120,0.5),
+    inset 0 0 0 1px rgba(0,255,120,0.4);
 }
 
-.izquierda:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 25px rgba(45,220,106,0.9);
+.redes {
+  display: flex;
+  gap: 16px;
+  margin-left: auto;
 }
 
-
-.derecha {
-  background: linear-gradient(180deg, #3affd0, #00bfa6);
-  color: #0b0b0b;
-  box-shadow: 0 0 15px rgba(58,255,208,0.6);
+.redes img {
+  width: 22px;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  filter: brightness(0.9);
 }
 
-.derecha:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 25px rgba(58,255,208,0.9);
+.redes img:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 8px rgba(0,255,120,0.8));
 }
-

@@ -20,7 +20,9 @@ function Encabezado() {
           <li>Productos</li>
           <li>Contactos</li>
           <li>Sucursales</li>
-        </ul>
+        </ul> 
+
+
 
         <div className="redes-der">
           <img src={imgWhats} alt="WhatsApp" />

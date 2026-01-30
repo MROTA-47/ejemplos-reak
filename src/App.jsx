@@ -38,11 +38,12 @@ function App() {
       </section>
 
       <main className="contenido-principal">
-        <h1>XBOX</h1>
+        <h1> RENE DAVID CABRERA GONZALEZ 5C DSM</h1>
         <p>
           Prepárate para jugar sin límites.
-          En Xbox encontrarás los mejores juegos, ofertas exclusivas y experiencias que llevan el gaming al siguiente nivel. Ya sea que busques acción, aventura, deportes o mundos abiertos increíbles, aquí hay algo hecho para ti.
-          Descubre títulos legendarios, nuevos lanzamientos y contenido imperdible para tu consola. Actualizamos nuestro catálogo constantemente para que siempre tengas algo nuevo que jugar.
+          En Xbox encontrarás los mejores juegos, ofertas exclusivas y experiencias que llevan el gaming al siguiente nivel,ya sea que busques acción, aventura, deportes o mundos abiertos increíbles, aquí hay algo hecho para ti.
+          Descubre títulos legendarios, nuevos lanzamientos y contenido imperdible para tu consola,
+          ctualizamos nuestro catálogo constantemente para que siempre tengas algo nuevo que jugar.
         </p>
       </main>
 
