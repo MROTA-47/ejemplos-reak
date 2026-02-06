@@ -1,36 +1,27 @@
-import logo from "./assets/logo.jpg";
-import imgWhats from "./assets/whatsapp.png";
-import imgYoutube from "./assets/youtube.png";
-import imgLinkedin from "./assets/linkedin.png";
+import "./encabezado.css";
+import panda from "./assets/logo.png"; // usa el que tengas
 
-function Encabezado() {
+function Encabezado({ cambiarVista }) {
   return (
-    <header className="barra-superior">
+    <header className="encabezado">
+      <div className="menu-container">
 
-      {}
-      <div className="logo-izq">
-        <img src={logo} alt="Logo" />
+        <img src={panda} alt="logo" className="logo" />
+
+        <nav className="menu">
+          <button onClick={() => cambiarVista("inicio")}>Inicio</button>
+          <button onClick={() => cambiarVista("acerca")}>Acerca de</button>
+          <button onClick={() => cambiarVista("productos")}>Productos</button>
+          <button onClick={() => cambiarVista("contactos")}>Contactos</button>
+          <button onClick={() => cambiarVista("sucursales")}>Sucursales</button>
+        </nav>
+<div className="redes">
+  <img src={facebook} alt="Facebook" />
+  <img src={instagram} alt="Instagram" />
+  <img src={linkedin} alt="LinkedIn" />
+</div>
+
       </div>
-
-      {}
-      <div className="menu-cuadro">
-        <ul>
-          <li>Inicio</li>
-          <li>Acerca de</li>
-          <li>Productos</li>
-          <li>Contactos</li>
-          <li>Sucursales</li>
-        </ul> 
-
-
-
-        <div className="redes-der">
-          <img src={imgWhats} alt="WhatsApp" />
-          <img src={imgYoutube} alt="YouTube" />
-          <img src={imgLinkedin} alt="LinkedIn" />
-        </div>
-      </div>
-
     </header>
   );
 }

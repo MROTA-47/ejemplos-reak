@@ -1,9 +1,9 @@
-function Tarjeta(props) {
+function Tarjeta({ imagen, nombre, descripcion }) {
   return (
-    <div className="card">
-      <img src={props.imagen} alt={props.nombre} />
-      <h3>{props.nombre}</h3>
-      <p>{props.descripcion}</p>
+    <div className="tarjeta">
+      <img src={imagen} alt={nombre} className="tarjeta-img" />
+      <h3>{nombre}</h3>
+      <p>{descripcion}</p>
     </div>
   );
 }

@@ -1,0 +1,16 @@
+function Contacto() {
+  return (
+    <section className="seccion">
+      <h2>Contacto</h2>
+
+      <form className="formulario">
+        <input type="text" placeholder="Nombre" />
+        <input type="email" placeholder="Correo electrónico" />
+        <textarea placeholder="Mensaje"></textarea>
+        <button>Enviar Mensaje</button>
+      </form>
+    </section>
+  );
+}
+
+export default Contacto;

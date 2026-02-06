@@ -1,0 +1,51 @@
+.encabezado {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.menu-container {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 20px;
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* LOGO */
+.logo {
+  width: 80px;
+}
+
+/* MENÚ */
+.menu {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.menu button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.menu button:hover {
+  color: #00ff88;
+}
+
+/* REDES */
+.redes {
+  display: flex;
+  gap: 10px;
+}
+
+.redes img {
+  width: 22px;
+  cursor: pointer;
+}
