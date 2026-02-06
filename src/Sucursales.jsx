@@ -1,14 +1,43 @@
+import "./Sucursales.css";
+
 function Sucursales() {
   return (
-    <section className="seccion">
+    <section className="seccion sucursales-seccion">
       <h2>Sucursales</h2>
 
-      <ul className="lista-sucursales">
-        <li>📍 Ciudad de México – Centro</li>
-        <li>📍 Guadalajara – Zona Norte</li>
-        <li>📍 Monterrey – Área Metropolitana</li>
-        <li>📍 Puebla – Plaza Central</li>
-      </ul>
+      <div className="sucursales-grid">
+        <div className="sucursal-card">
+          <span className="icono">📍</span>
+          <div className="sucursal-info">
+            <h3>Ciudad de México</h3>
+            <p>Centro</p>
+          </div>
+        </div>
+
+        <div className="sucursal-card">
+          <span className="icono">📍</span>
+          <div className="sucursal-info">
+            <h3>Guadalajara</h3>
+            <p>Zona Norte</p>
+          </div>
+        </div>
+
+        <div className="sucursal-card">
+          <span className="icono">📍</span>
+          <div className="sucursal-info">
+            <h3>Monterrey</h3>
+            <p>Área Metropolitana</p>
+          </div>
+        </div>
+
+        <div className="sucursal-card">
+          <span className="icono">📍</span>
+          <div className="sucursal-info">
+            <h3>Puebla</h3>
+            <p>Plaza Central</p>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

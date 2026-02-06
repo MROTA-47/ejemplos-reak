@@ -9,7 +9,7 @@ function Productos() {
         <div className="producto-card">
           <img src="/producto1.png" alt="Producto 1" />
           <h3>Producto Super Mario Galaxy</h3>
-          <p>Descripción del producto uno.</p>
+          <p>El top 1 al momento.</p>
         </div>
 
         <div className="producto-card">

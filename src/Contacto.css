@@ -1,16 +1,129 @@
-function Contacto() {
-  return (
-    <section className="seccion">
-      <h2>Contacto</h2>
-
-      <form className="formulario">
-        <input type="text" placeholder="Nombre" />
-        <input type="email" placeholder="Correo electrónico" />
-        <textarea placeholder="Mensaje"></textarea>
-        <button>Enviar Mensaje</button>
-      </form>
-    </section>
-  );
+/* ===== SECCIÓN CONTACTO ===== */
+.seccion.contacto {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 40px;
+  background: #0f0f14;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+  color: #eaeaf0;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-export default Contacto;
+/* TÍTULO */
+.seccion.contacto h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+  color: #7aa2ff;
+}
+
+/* ===== INFO DE CONTACTO ===== */
+.info-contacto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 12px;
+  margin-bottom: 35px;
+  padding: 20px;
+  background: #15151f;
+  border-radius: 12px;
+}
+
+.info-contacto p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #cfd3ff;
+}
+
+.info-contacto strong {
+  color: #9aa8ff;
+}
+
+/* ===== FORMULARIO ===== */
+.formulario-contacto {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+/* CAMPOS */
+.campo {
+  display: flex;
+  flex-direction: column;
+}
+
+.campo label {
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+  color: #aab1ff;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  background: #1b1b2b;
+  border: 1px solid #2a2a3d;
+  border-radius: 10px;
+  padding: 12px 14px;
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.campo input::placeholder,
+.campo textarea::placeholder {
+  color: #8b8fae;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  border-color: #7aa2ff;
+  box-shadow: 0 0 0 2px rgba(122, 162, 255, 0.25);
+}
+
+/* MENSAJE OCUPA TODO */
+.campo textarea {
+  resize: none;
+}
+
+/* Hace que el textarea y botón ocupen todo el ancho */
+.campo:nth-last-child(2),
+.btn-enviar {
+  grid-column: 1 / -1;
+}
+
+/* ===== BOTÓN ===== */
+.btn-enviar {
+  background: linear-gradient(135deg, #7aa2ff, #9f7bff);
+  border: none;
+  border-radius: 14px;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0f0f14;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-enviar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(122, 162, 255, 0.4);
+}
+
+.btn-enviar:active {
+  transform: scale(0.98);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .formulario-contacto {
+    grid-template-columns: 1fr;
+  }
+
+  .seccion.contacto {
+    padding: 25px;
+  }
+}
