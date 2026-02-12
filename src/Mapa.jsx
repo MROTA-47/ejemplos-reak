@@ -1,4 +1,5 @@
-import "./Contacto.css";
+import Mapa from "./Mapa";
+import './Contacto.css';
 
 function Contacto() {
   return (
@@ -7,29 +8,14 @@ function Contacto() {
 
       <div className="contacto-contenedor">
 
-        {/* Información + mapa */}
         <div className="info-contacto">
-
-          <div className="mapa-container">
-            <iframe
-              src="https://www.google.com/maps?q=Cancun,Quintana+Roo&output=embed"
-              width="100%"
-              height="200"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              title="Cancún"
-            ></iframe>
-          </div>
-
-          <h3>Sucursal Principal - Cancún</h3>
-          <p><strong>Dirección:</strong> Av. Tulum 234, Centro, Cancún, Q.R.</p>
-          <p><strong>Teléfono:</strong> +52 998 123 4567</p>
-          <p><strong>Correo:</strong> contacto@otalker.dev</p>
-          <p><strong>Horario:</strong> Lunes a Viernes 9:00 a.m. – 6:00 p.m.</p>
+          <p><strong>Correo principal:</strong> contacto@otalker.dev</p>
+          <p><strong>Correo alternativo:</strong> soporte@otalker.dev</p>
+          <p><strong>Teléfono:</strong> +52 797 558 7980</p>
+          <p><strong>Horario de atención:</strong> Lunes a Viernes, 9:00 a.m. – 6:00 p.m.</p>
+          <p><strong>Ubicación:</strong> Hidalgo, México</p>
         </div>
 
-        {/* Formulario */}
         <div className="form-card form-marco">
           <h3 className="form-title">Envíanos un mensaje</h3>
 
@@ -72,6 +58,10 @@ function Contacto() {
         </div>
 
       </div>
+
+      {}
+      <Mapa />
+
     </section>
   );
 }
