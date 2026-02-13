@@ -1,0 +1,22 @@
+.mapa-latitud {
+  text-align: center;
+  padding: 20px;
+}
+
+.inputs {
+  margin-bottom: 20px;
+}
+
+.inputs input {
+  padding: 8px;
+  margin: 5px;
+  width: 150px;
+}
+
+.inputs button {
+  padding: 8px 15px;
+  cursor: pointer;
+  background: #00ff55;
+  border: none;
+  border-radius: 5px;
+}

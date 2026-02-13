@@ -1,0 +1,25 @@
+.mapa-container {
+  width: 100%;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.btn-ubicacion {
+  background: #00ff55;
+  color: black;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-ubicacion:hover {
+  background: #00cc44;
+  transform: scale(1.05);
+}

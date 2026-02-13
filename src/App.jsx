@@ -12,30 +12,39 @@ import Productos from "./Productos";
 import Galeria from "./Galeria";
 import Sucursales from "./Sucursales";
 import Contacto from "./Contacto";
+import UbicacionMapa from "./UbicacionMapa";
+import MapaLatitud from "./MapaLatitud"; // 🔥 NUEVO
 
 function App() {
   const [seccion, setSeccion] = useState("inicio");
 
   return (
     <>
-      {/* HEADER */}
+      {/* ================= HEADER ================= */}
       <header className="header">
         <div className="logo">
           <img src={logo} alt="logo" />
         </div>
 
         <nav className="menu">
-          {["inicio", "acerca", "productos", "galeria", "sucursales", "contacto"].map(
-            (e) => (
-              <button
-                key={e}
-                className={seccion === e ? "activo" : ""}
-                onClick={() => setSeccion(e)}
-              >
-                {e.toUpperCase()}
-              </button>
-            )
-          )}
+          {[
+            "inicio",
+            "acerca",
+            "productos",
+            "galeria",
+            "sucursales",
+            "contacto",
+            "ubicacion",
+            "mapalatitud", // 🔥 NUEVO
+          ].map((e) => (
+            <button
+              key={e}
+              className={seccion === e ? "activo" : ""}
+              onClick={() => setSeccion(e)}
+            >
+              {e.toUpperCase()}
+            </button>
+          ))}
         </nav>
 
         <div className="redes">
@@ -45,7 +54,7 @@ function App() {
         </div>
       </header>
 
-      {/* CONTENIDO */}
+      {/* ================= CONTENIDO ================= */}
       <main className="contenido">
         {seccion === "inicio" && <ContenedorCards />}
         {seccion === "acerca" && <Acerca />}
@@ -53,9 +62,11 @@ function App() {
         {seccion === "galeria" && <Galeria />}
         {seccion === "sucursales" && <Sucursales />}
         {seccion === "contacto" && <Contacto />}
+        {seccion === "ubicacion" && <UbicacionMapa />}
+        {seccion === "mapalatitud" && <MapaLatitud />} {/* 🔥 NUEVO */}
       </main>
 
-      {/* FOOTER */}
+      {/* ================= FOOTER ================= */}
       <footer className="footer">
         <p>OFERTAS EN TODOS LOS PRODUCTOS</p>
       </footer>

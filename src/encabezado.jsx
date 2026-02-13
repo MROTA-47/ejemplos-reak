@@ -1,5 +1,8 @@
 import "./encabezado.css";
-import panda from "./assets/logo.png"; // usa el que tengas
+import panda from "./assets/logo.png";
+import facebook from "./assets/facebook.png";
+import instagram from "./assets/instagram.png";
+import linkedin from "./assets/linkedin.png";
 
 function Encabezado({ cambiarVista }) {
   return (
@@ -14,12 +17,14 @@ function Encabezado({ cambiarVista }) {
           <button onClick={() => cambiarVista("productos")}>Productos</button>
           <button onClick={() => cambiarVista("contactos")}>Contactos</button>
           <button onClick={() => cambiarVista("sucursales")}>Sucursales</button>
+          <button onClick={() => cambiarVista("ubicacion")}>Ubicación</button>
         </nav>
-<div className="redes">
-  <img src={facebook} alt="Facebook" />
-  <img src={instagram} alt="Instagram" />
-  <img src={linkedin} alt="LinkedIn" />
-</div>
+
+        <div className="redes">
+          <img src={facebook} alt="Facebook" />
+          <img src={instagram} alt="Instagram" />
+          <img src={linkedin} alt="LinkedIn" />
+        </div>
 
       </div>
     </header>
