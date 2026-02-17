@@ -14,11 +14,13 @@
   gap: 40px;
 }
 
-
 .logo {
   width: 80px;
 }
 
+.logo img {
+  width: 100%;
+}
 
 .menu {
   display: flex;
@@ -33,12 +35,17 @@
   font-size: 15px;
   cursor: pointer;
   text-align: left;
+  transition: 0.3s;
 }
 
 .menu button:hover {
-  color: #00ff88;
+  color: #000000;
 }
 
+.menu button.activo {
+  color: #ff0000;
+  font-weight: bold;
+}
 
 .redes {
   display: flex;
@@ -48,4 +55,9 @@
 .redes img {
   width: 22px;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.redes img:hover {
+  transform: scale(1.1);
 }

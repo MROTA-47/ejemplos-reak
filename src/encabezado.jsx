@@ -13,11 +13,14 @@ function Encabezado({ cambiarVista }) {
 
         <nav className="menu">
           <button onClick={() => cambiarVista("inicio")}>Inicio</button>
-          <button onClick={() => cambiarVista("acerca")}>Acerca de</button>
+          <button onClick={() => cambiarVista("acerca")}>Acerca</button>
           <button onClick={() => cambiarVista("productos")}>Productos</button>
-          <button onClick={() => cambiarVista("contactos")}>Contactos</button>
+          <button onClick={() => cambiarVista("galeria")}>Galeria</button>
           <button onClick={() => cambiarVista("sucursales")}>Sucursales</button>
-          <button onClick={() => cambiarVista("ubicacion")}>Ubicación</button>
+          <button onClick={() => cambiarVista("contacto")}>Contacto</button>
+          <button onClick={() => cambiarVista("ubicacion")}>Ubicacion</button>
+          <button onClick={() => cambiarVista("mapalatitud")}>MapaLatitud</button>
+          <button onClick={() => cambiarVista("clima")}>Clima</button>
         </nav>
 
         <div className="redes">

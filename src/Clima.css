@@ -1,0 +1,35 @@
+.clima-container {
+  background: #141414;
+  padding: 40px;
+  border-radius: 25px;
+  width: 380px;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(0, 255, 100, 0.25);
+  transition: 0.3s;
+}
+
+.clima-container:hover {
+  transform: translateY(-5px);
+}
+
+.clima-container h1 {
+  font-size: 26px;
+  margin-bottom: 15px;
+  color: #00ff88;
+}
+
+.clima-container h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.clima-container p {
+  font-size: 16px;
+  margin: 8px 0;
+  color: #cccccc;
+}
+.icono-clima {
+  width: 80px;
+  margin-bottom: 15px;
+}

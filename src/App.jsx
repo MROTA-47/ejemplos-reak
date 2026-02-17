@@ -13,14 +13,14 @@ import Galeria from "./Galeria";
 import Sucursales from "./Sucursales";
 import Contacto from "./Contacto";
 import UbicacionMapa from "./UbicacionMapa";
-import MapaLatitud from "./MapaLatitud"; // 🔥 NUEVO
+import MapaLatitud from "./MapaLatitud";
+import Clima from "./Clima"; 
 
 function App() {
   const [seccion, setSeccion] = useState("inicio");
 
   return (
     <>
-      {/* ================= HEADER ================= */}
       <header className="header">
         <div className="logo">
           <img src={logo} alt="logo" />
@@ -35,7 +35,8 @@ function App() {
             "sucursales",
             "contacto",
             "ubicacion",
-            "mapalatitud", // 🔥 NUEVO
+            "mapalatitud",
+            "clima" 
           ].map((e) => (
             <button
               key={e}
@@ -54,7 +55,6 @@ function App() {
         </div>
       </header>
 
-      {/* ================= CONTENIDO ================= */}
       <main className="contenido">
         {seccion === "inicio" && <ContenedorCards />}
         {seccion === "acerca" && <Acerca />}
@@ -63,10 +63,10 @@ function App() {
         {seccion === "sucursales" && <Sucursales />}
         {seccion === "contacto" && <Contacto />}
         {seccion === "ubicacion" && <UbicacionMapa />}
-        {seccion === "mapalatitud" && <MapaLatitud />} {/* 🔥 NUEVO */}
+        {seccion === "mapalatitud" && <MapaLatitud />}
+        {seccion === "clima" && <Clima />} {}
       </main>
 
-      {/* ================= FOOTER ================= */}
       <footer className="footer">
         <p>OFERTAS EN TODOS LOS PRODUCTOS</p>
       </footer>
