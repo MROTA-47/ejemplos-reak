@@ -14,7 +14,8 @@ import Sucursales from "./Sucursales";
 import Contacto from "./Contacto";
 import UbicacionMapa from "./UbicacionMapa";
 import MapaLatitud from "./MapaLatitud";
-import Clima from "./Clima"; 
+import Clima from "./Clima";
+import Usuarios from "./Usuarios";
 
 function App() {
   const [seccion, setSeccion] = useState("inicio");
@@ -36,7 +37,8 @@ function App() {
             "contacto",
             "ubicacion",
             "mapalatitud",
-            "clima" 
+            "clima",
+            "usuarios", 
           ].map((e) => (
             <button
               key={e}
@@ -64,7 +66,8 @@ function App() {
         {seccion === "contacto" && <Contacto />}
         {seccion === "ubicacion" && <UbicacionMapa />}
         {seccion === "mapalatitud" && <MapaLatitud />}
-        {seccion === "clima" && <Clima />} {}
+        {seccion === "clima" && <Clima />}
+        {seccion === "usuarios" && <Usuarios />} {}
       </main>
 
       <footer className="footer">

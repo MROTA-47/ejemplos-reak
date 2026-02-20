@@ -21,6 +21,7 @@ function Encabezado({ cambiarVista }) {
           <button onClick={() => cambiarVista("ubicacion")}>Ubicacion</button>
           <button onClick={() => cambiarVista("mapalatitud")}>MapaLatitud</button>
           <button onClick={() => cambiarVista("clima")}>Clima</button>
+            <button onClick={() => cambiarVista("Usuarios")}>usuarios</button>
         </nav>
 
         <div className="redes">

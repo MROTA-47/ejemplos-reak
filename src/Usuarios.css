@@ -1,0 +1,78 @@
+.usuarios-container {
+  padding: 40px;
+  min-height: 70vh;
+}
+
+.usuarios-titulo {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 30px;
+  color: #00ff88;
+  letter-spacing: 2px;
+}
+
+.tabla-usuarios {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+}
+
+
+.tabla-usuarios thead {
+  background-color: #111;
+}
+
+.tabla-usuarios th {
+  padding: 14px;
+  color: #00ff88;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #00ff88;
+}
+
+
+.tabla-usuarios td {
+  padding: 12px;
+  text-align: center;
+  color: white;
+  border-bottom: 1px solid #333;
+  font-size: 14px;
+}
+
+.tabla-usuarios tbody tr:hover {
+  background-color: rgba(0, 255, 136, 0.1);
+  transition: 0.2s ease;
+}
+
+
+.btn-editar {
+  background-color: #ffaa00;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.btn-editar:hover {
+  background-color: #ffcc33;
+  transform: scale(1.1);
+}
+
+.btn-eliminar {
+  background-color: #ff3333;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.btn-eliminar:hover {
+  background-color: #ff5555;
+  transform: scale(1.1);
+}
