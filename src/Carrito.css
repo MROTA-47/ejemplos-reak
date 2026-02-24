@@ -1,0 +1,28 @@
+.contenedor-carritos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card-carrito {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.fecha {
+  color: #b30000;
+  font-weight: bold;
+}
+
+.card-carrito button {
+  margin-top: 10px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}

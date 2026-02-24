@@ -16,9 +16,32 @@ import UbicacionMapa from "./UbicacionMapa";
 import MapaLatitud from "./MapaLatitud";
 import Clima from "./Clima";
 import Usuarios from "./Usuarios";
+import Carrito from "./Carrito";
+import RegistrarProductos from "./RegistrarProductos"; 
 
 function App() {
   const [seccion, setSeccion] = useState("inicio");
+  const [carrito, setCarrito] = useState([]);
+
+  const agregarAlCarrito = (producto) => {
+    const existe = carrito.find((item) => item.id === producto.id);
+
+    if (existe) {
+      const nuevoCarrito = carrito.map((item) =>
+        item.id === producto.id
+          ? { ...item, cantidad: item.cantidad + 1 }
+          : item
+      );
+      setCarrito(nuevoCarrito);
+    } else {
+      setCarrito([...carrito, { ...producto, cantidad: 1 }]);
+    }
+  };
+
+  const eliminarProducto = (id) => {
+    const nuevoCarrito = carrito.filter((item) => item.id !== id);
+    setCarrito(nuevoCarrito);
+  };
 
   return (
     <>
@@ -32,13 +55,15 @@ function App() {
             "inicio",
             "acerca",
             "productos",
+            "carrito",
+            "registrar", 
             "galeria",
             "sucursales",
             "contacto",
             "ubicacion",
             "mapalatitud",
             "clima",
-            "usuarios", 
+            "usuarios",
           ].map((e) => (
             <button
               key={e}
@@ -60,14 +85,20 @@ function App() {
       <main className="contenido">
         {seccion === "inicio" && <ContenedorCards />}
         {seccion === "acerca" && <Acerca />}
-        {seccion === "productos" && <Productos />}
+        {seccion === "productos" && (
+          <Productos agregarAlCarrito={agregarAlCarrito} />
+        )}
+        {seccion === "carrito" && (
+          <Carrito carrito={carrito} eliminarProducto={eliminarProducto} />
+        )}
+        {seccion === "registrar" && <RegistrarProductos />} {}
         {seccion === "galeria" && <Galeria />}
         {seccion === "sucursales" && <Sucursales />}
         {seccion === "contacto" && <Contacto />}
         {seccion === "ubicacion" && <UbicacionMapa />}
         {seccion === "mapalatitud" && <MapaLatitud />}
         {seccion === "clima" && <Clima />}
-        {seccion === "usuarios" && <Usuarios />} {}
+        {seccion === "usuarios" && <Usuarios />}
       </main>
 
       <footer className="footer">

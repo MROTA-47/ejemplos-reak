@@ -2,7 +2,7 @@ import api from "./Services/api";
 import { useEffect, useState } from "react";
 import "./Productos.css";
 
-function Productos() {
+function Productos({ agregarAlCarrito }) {
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -52,6 +52,19 @@ function Productos() {
             <h3>{producto.title}</h3>
             <p>{producto.description}</p>
             <span className="precio">${producto.price}</span>
+
+            <button
+              className="btn-carrito"
+              onClick={() =>
+                agregarAlCarrito({
+                  id: producto.id,
+                  nombre: producto.title,
+                  precio: producto.price,
+                })
+              }
+            >
+              Agregar al carrito
+            </button>
           </div>
         ))}
       </div>

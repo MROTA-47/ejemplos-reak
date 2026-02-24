@@ -96,3 +96,19 @@
     height: 200px;
   }
 }
+.btn-carrito {
+  margin-top: 15px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  background: #00ff88;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-carrito:hover {
+  background: #00cc6a;
+  transform: scale(1.05);
+} 
