@@ -1,28 +1,122 @@
-.contenedor-carritos {
+.carrito-section {
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.carrito-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #00ff88;
+}
+
+.carrito-form {
   display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
   flex-wrap: wrap;
-  gap: 20px;
 }
 
-.card-carrito {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 250px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+.carrito-form input {
+  padding: 10px;
+  width: 150px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
-.fecha {
-  color: #b30000;
+.carrito-form button {
+  padding: 10px 20px;
+  background: #00ff88;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
   font-weight: bold;
 }
 
-.card-carrito button {
-  margin-top: 10px;
-  background: #e74c3c;
+.carrito-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.carrito-card {
+  background: #111;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #00ff88;
+}
+
+.carrito-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.carrito-card table {
+  width: 100%;
+  margin-bottom: 15px;
+  border-collapse: collapse;
+}
+
+.carrito-card th,
+.carrito-card td {
+  padding: 6px;
+  text-align: center;
+  border-bottom: 1px solid #333;
+}
+
+.btn-eliminar {
+  width: 100%;
+  padding: 8px;
+  background: red;
   color: white;
   border: none;
-  padding: 8px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.carrito-local-item {
+  background: #1a1a1a;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #00ff88;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.carrito-local-item p {
+  margin: 0;
+}
+
+.carrito-section h3 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #00ff88;
+}
+
+.carrito-section h4 {
+  margin-top: 15px;
+  color: #ffffff;
+  text-align: right;
+}
+
+
+.btn-eliminar {
+  padding: 6px 10px;
+  background: #ff3b3b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s ease;
+}
+
+.btn-eliminar:hover {
+  background: #cc0000;
+  transform: scale(1.05);
 }

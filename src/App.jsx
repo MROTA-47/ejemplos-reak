@@ -17,31 +17,11 @@ import MapaLatitud from "./MapaLatitud";
 import Clima from "./Clima";
 import Usuarios from "./Usuarios";
 import Carrito from "./Carrito";
-import RegistrarProductos from "./RegistrarProductos"; 
+import RegistrarProductos from "./RegistrarProductos";
+import RegistrarUsuario from "./RegistrarUsuario";
 
 function App() {
   const [seccion, setSeccion] = useState("inicio");
-  const [carrito, setCarrito] = useState([]);
-
-  const agregarAlCarrito = (producto) => {
-    const existe = carrito.find((item) => item.id === producto.id);
-
-    if (existe) {
-      const nuevoCarrito = carrito.map((item) =>
-        item.id === producto.id
-          ? { ...item, cantidad: item.cantidad + 1 }
-          : item
-      );
-      setCarrito(nuevoCarrito);
-    } else {
-      setCarrito([...carrito, { ...producto, cantidad: 1 }]);
-    }
-  };
-
-  const eliminarProducto = (id) => {
-    const nuevoCarrito = carrito.filter((item) => item.id !== id);
-    setCarrito(nuevoCarrito);
-  };
 
   return (
     <>
@@ -56,7 +36,7 @@ function App() {
             "acerca",
             "productos",
             "carrito",
-            "registrar", 
+            "registrar",
             "galeria",
             "sucursales",
             "contacto",
@@ -85,13 +65,9 @@ function App() {
       <main className="contenido">
         {seccion === "inicio" && <ContenedorCards />}
         {seccion === "acerca" && <Acerca />}
-        {seccion === "productos" && (
-          <Productos agregarAlCarrito={agregarAlCarrito} />
-        )}
-        {seccion === "carrito" && (
-          <Carrito carrito={carrito} eliminarProducto={eliminarProducto} />
-        )}
-        {seccion === "registrar" && <RegistrarProductos />} {}
+        {seccion === "productos" && <Productos />}
+        {seccion === "carrito" && <Carrito />}
+        {seccion === "registrar" && <RegistrarProductos />}
         {seccion === "galeria" && <Galeria />}
         {seccion === "sucursales" && <Sucursales />}
         {seccion === "contacto" && <Contacto />}

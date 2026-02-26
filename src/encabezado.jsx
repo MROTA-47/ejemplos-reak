@@ -15,14 +15,16 @@ function Encabezado({ cambiarVista }) {
           <button onClick={() => cambiarVista("inicio")}>Inicio</button>
           <button onClick={() => cambiarVista("acerca")}>Acerca</button>
           <button onClick={() => cambiarVista("productos")}>Productos</button>
-          <button onClick={() => cambiarVista("galeria")}>Galeria</button>
+          <button onClick={() => cambiarVista("galeria")}>Galería</button>
           <button onClick={() => cambiarVista("sucursales")}>Sucursales</button>
           <button onClick={() => cambiarVista("contacto")}>Contacto</button>
-          <button onClick={() => cambiarVista("ubicacion")}>Ubicacion</button>
-          <button onClick={() => cambiarVista("mapalatitud")}>MapaLatitud</button>
+          <button onClick={() => cambiarVista("ubicacion")}>Ubicación</button>
+          <button onClick={() => cambiarVista("mapalatitud")}>Mapa Latitud</button>
           <button onClick={() => cambiarVista("clima")}>Clima</button>
-            <button onClick={() => cambiarVista("Usuarios")}>usuarios</button>
-            
+          <button onClick={() => cambiarVista("usuarios")}>Usuarios</button>
+          <button onClick={() => cambiarVista("registrar")}>Registrar Producto</button>
+          <button onClick={() => cambiarVista("registrarusuario")}>Registrar Usuario</button>
+          <button onClick={() => cambiarVista("carrito")}>Carrito</button>
         </nav>
 
         <div className="redes">

@@ -7,3 +7,6 @@ export const obtenerCarrito = () => {
 export const eliminarDelCarrito = (id) => {
   return api.delete(`carts/${id}`);
 };
+export const crearCarrito = (carrito) => {
+  return api.post("carts", carrito);
+};

@@ -76,3 +76,41 @@
   background-color: #ff5555;
   transform: scale(1.1);
 }
+.form-usuario {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 25px;
+  justify-content: center;
+}
+
+.form-usuario input {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #00ff88;
+  background-color: #111;
+  color: white;
+  width: 180px;
+}
+
+.form-usuario button {
+  padding: 8px 15px;
+  border-radius: 6px;
+  border: none;
+  background-color: #00ff88;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btn-eliminar {
+  background-color: #ff3b3b;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-eliminar:hover {
+  background-color: #cc0000;
+}
