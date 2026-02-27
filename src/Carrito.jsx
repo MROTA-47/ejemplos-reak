@@ -18,10 +18,10 @@ function Carrito({ carritoLocal = [], setCarritoLocal }) {
 
   const cargarCarritos = async () => {
     try {
-      const res = await obtenerCarrito();
-      setCarritos(res.data);
+      const data = await obtenerCarrito(); 
+      setCarritos(data);
     } catch (error) {
-      console.error(error);
+      console.error("Error cargando carritos:", error);
     }
   };
 
@@ -41,7 +41,7 @@ function Carrito({ carritoLocal = [], setCarritoLocal }) {
 
     try {
       await crearCarrito(nuevoCarrito);
-      cargarCarritos();
+      await cargarCarritos();
       setUserId("");
       setProductId("");
       setQuantity("");
@@ -53,7 +53,7 @@ function Carrito({ carritoLocal = [], setCarritoLocal }) {
   const eliminarBackend = async (id) => {
     try {
       await eliminarDelCarrito(id);
-      cargarCarritos();
+      await cargarCarritos();
     } catch (error) {
       console.error(error);
     }
@@ -110,6 +110,7 @@ function Carrito({ carritoLocal = [], setCarritoLocal }) {
           onChange={(e) => setUserId(e.target.value)}
           required
         />
+
         <input
           type="number"
           placeholder="ID Producto"
@@ -117,6 +118,7 @@ function Carrito({ carritoLocal = [], setCarritoLocal }) {
           onChange={(e) => setProductId(e.target.value)}
           required
         />
+
         <input
           type="number"
           placeholder="Cantidad"
@@ -124,6 +126,7 @@ function Carrito({ carritoLocal = [], setCarritoLocal }) {
           onChange={(e) => setQuantity(e.target.value)}
           required
         />
+
         <button type="submit">Agregar</button>
       </form>
 
@@ -158,7 +161,7 @@ function Carrito({ carritoLocal = [], setCarritoLocal }) {
               className="btn-eliminar"
               onClick={() => eliminarBackend(carrito.id)}
             >
-              Cancelar
+              Eliminar
             </button>
           </div>
         ))}

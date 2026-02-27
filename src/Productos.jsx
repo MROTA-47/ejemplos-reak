@@ -10,15 +10,21 @@ function Productos({ agregarAlCarrito }) {
     title: "",
     price: "",
     description: "",
-    imagenPersonalizada: ""
+    imagenPersonalizada: "",
   });
 
   useEffect(() => {
     const obtenerProductos = async () => {
       try {
+        console.log(" Llamando API...");
+
         const response = await api.get("products");
 
+        console.log(" Data completa:", response.data);
+
         const primerosTres = response.data.slice(0, 3);
+
+        console.log(" Primeros 3 productos:", primerosTres);
 
         const imagenes = [
           "/producto1.png",
@@ -31,9 +37,11 @@ function Productos({ agregarAlCarrito }) {
           imagenPersonalizada: imagenes[index],
         }));
 
+        console.log(" Productos con imagen personalizada:", productosConImagen);
+
         setProductos(productosConImagen);
       } catch (error) {
-        console.error("Error al obtener productos:", error);
+        console.error(" Error al obtener productos:", error);
       } finally {
         setLoading(false);
       }
@@ -45,7 +53,7 @@ function Productos({ agregarAlCarrito }) {
   const handleChange = (e) => {
     setNuevoProducto({
       ...nuevoProducto,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -53,12 +61,14 @@ function Productos({ agregarAlCarrito }) {
     e.preventDefault();
 
     const productoAgregado = {
-      id: productos.length + 1,
+      id: productos.length + 100,
       title: nuevoProducto.title,
       description: nuevoProducto.description,
       price: parseFloat(nuevoProducto.price),
-      imagenPersonalizada: nuevoProducto.imagenPersonalizada
+      imagenPersonalizada: nuevoProducto.imagenPersonalizada,
     };
+
+    console.log(" Producto agregado manualmente:", productoAgregado);
 
     setProductos([...productos, productoAgregado]);
 
@@ -66,14 +76,17 @@ function Productos({ agregarAlCarrito }) {
       title: "",
       price: "",
       description: "",
-      imagenPersonalizada: ""
+      imagenPersonalizada: "",
     });
   };
 
   const eliminarProducto = (id) => {
+    console.log(" Eliminando producto ID:", id);
+
     const productosFiltrados = productos.filter(
       (producto) => producto.id !== id
     );
+
     setProductos(productosFiltrados);
   };
 

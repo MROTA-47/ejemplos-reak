@@ -1,10 +1,17 @@
 import { useEffect, useState } from "react";
-import api from "./Services/api";
+import {
+  obtenerUsuarios,
+  crearUsuario,
+  actualizarUsuario,
+  eliminarUsuarioApi
+} from "./Services/usuarioService";
+
 import "./Usuarios.css";
 
 function Usuarios() {
   const [usuarios, setUsuarios] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [editandoId, setEditandoId] = useState(null);
 
   const [nuevoUsuario, setNuevoUsuario] = useState({
     firstname: "",
@@ -17,16 +24,15 @@ function Usuarios() {
   });
 
   useEffect(() => {
-    obtenerUsuarios();
+    cargarUsuarios();
   }, []);
 
-  const obtenerUsuarios = async () => {
+  const cargarUsuarios = async () => {
     try {
-      const response = await api.get("users");
-      setUsuarios(response.data);
+      const data = await obtenerUsuarios();
+      setUsuarios(data);
       setLoading(false);
     } catch (error) {
-      console.error("Error al obtener usuarios:", error);
       setLoading(false);
     }
   };
@@ -38,11 +44,10 @@ function Usuarios() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const usuarioAgregado = {
-      id: usuarios.length + 1,
+    const dataUsuario = {
       name: {
         firstname: nuevoUsuario.firstname,
         lastname: nuevoUsuario.lastname
@@ -56,22 +61,54 @@ function Usuarios() {
       email: nuevoUsuario.email
     };
 
-    setUsuarios([...usuarios, usuarioAgregado]);
+    try {
+      if (editandoId) {
+        await actualizarUsuario(editandoId, dataUsuario);
+        setEditandoId(null);
+      } else {
+        await crearUsuario(dataUsuario);
+      }
 
-    setNuevoUsuario({
-      firstname: "",
-      lastname: "",
-      city: "",
-      street: "",
-      number: "",
-      phone: "",
-      email: ""
-    });
+      await cargarUsuarios();
+
+      setNuevoUsuario({
+        firstname: "",
+        lastname: "",
+        city: "",
+        street: "",
+        number: "",
+        phone: "",
+        email: ""
+      });
+
+    } catch (error) {
+      console.error("Error en submit:", error);
+    }
   };
 
-  const eliminarUsuario = (id) => {
-    const usuariosFiltrados = usuarios.filter((user) => user.id !== id);
-    setUsuarios(usuariosFiltrados);
+  const eliminarUsuario = async (id) => {
+    try {
+      await eliminarUsuarioApi(id);
+      await cargarUsuarios();
+    } catch (error) {
+      console.error("Error eliminando:", error);
+    }
+  };
+
+  const editarUsuario = (id) => {
+    const usuario = usuarios.find((user) => user.id === id);
+
+    setNuevoUsuario({
+      firstname: usuario.name?.firstname || "",
+      lastname: usuario.name?.lastname || "",
+      city: usuario.address?.city || "",
+      street: usuario.address?.street || "",
+      number: usuario.address?.number || "",
+      phone: usuario.phone || "",
+      email: usuario.email || ""
+    });
+
+    setEditandoId(id);
   };
 
   if (loading) {
@@ -83,70 +120,30 @@ function Usuarios() {
       <h1 className="usuarios-titulo">USUARIOS</h1>
 
       <form className="form-usuario" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="firstname"
-          placeholder="Nombre"
-          value={nuevoUsuario.firstname}
-          onChange={handleChange}
-          required
-        />
+        <input name="firstname" placeholder="Nombre"
+          value={nuevoUsuario.firstname} onChange={handleChange} required />
 
-        <input
-          type="text"
-          name="lastname"
-          placeholder="Apellidos"
-          value={nuevoUsuario.lastname}
-          onChange={handleChange}
-          required
-        />
+        <input name="lastname" placeholder="Apellidos"
+          value={nuevoUsuario.lastname} onChange={handleChange} required />
 
-        <input
-          type="text"
-          name="city"
-          placeholder="Ciudad"
-          value={nuevoUsuario.city}
-          onChange={handleChange}
-          required
-        />
+        <input name="city" placeholder="Ciudad"
+          value={nuevoUsuario.city} onChange={handleChange} required />
 
-        <input
-          type="text"
-          name="street"
-          placeholder="Calle"
-          value={nuevoUsuario.street}
-          onChange={handleChange}
-          required
-        />
+        <input name="street" placeholder="Calle"
+          value={nuevoUsuario.street} onChange={handleChange} required />
 
-        <input
-          type="number"
-          name="number"
-          placeholder="Número"
-          value={nuevoUsuario.number}
-          onChange={handleChange}
-          required
-        />
+        <input type="number" name="number" placeholder="Número"
+          value={nuevoUsuario.number} onChange={handleChange} required />
 
-        <input
-          type="text"
-          name="phone"
-          placeholder="Teléfono"
-          value={nuevoUsuario.phone}
-          onChange={handleChange}
-          required
-        />
+        <input name="phone" placeholder="Teléfono"
+          value={nuevoUsuario.phone} onChange={handleChange} required />
 
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={nuevoUsuario.email}
-          onChange={handleChange}
-          required
-        />
+        <input type="email" name="email" placeholder="Email"
+          value={nuevoUsuario.email} onChange={handleChange} required />
 
-        <button type="submit">Agregar Usuario</button>
+        <button type="submit">
+          {editandoId ? "Actualizar Usuario" : "Agregar Usuario"}
+        </button>
       </form>
 
       <table className="tabla-usuarios">
@@ -169,8 +166,7 @@ function Usuarios() {
               <td>{user.name?.firstname}</td>
               <td>{user.name?.lastname}</td>
               <td>
-                {user.address?.city}, {user.address?.street}{" "}
-                {user.address?.number}
+                {user.address?.city}, {user.address?.street} {user.address?.number}
               </td>
               <td>{user.phone}</td>
               <td>{user.email}</td>
@@ -180,6 +176,13 @@ function Usuarios() {
                   onClick={() => eliminarUsuario(user.id)}
                 >
                   Eliminar
+                </button>
+
+                <button
+                  className="btn-editar"
+                  onClick={() => editarUsuario(user.id)}
+                >
+                  Editar
                 </button>
               </td>
             </tr>
