@@ -1,0 +1,25 @@
+.card{
+  border:1px solid #ddd;
+  border-radius:10px;
+  padding:15px;
+  background:white;
+  box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+.card img{
+  width:100%;
+  border-radius:8px;
+}
+
+.card h3{
+  margin:10px 0;
+}
+
+.card button{
+  padding:8px 15px;
+  border:none;
+  background:#007bff;
+  color:white;
+  border-radius:5px;
+  cursor:pointer;
+}

@@ -20,6 +20,7 @@ import Carrito from "./Carrito";
 import RegistrarProductos from "./RegistrarProductos";
 import RegistrarUsuario from "./RegistrarUsuario";
 import Login from "./Login";
+import Categorias from "./Categorias";
 
 import { useAuth } from "./context/AuthContext";
 
@@ -61,6 +62,7 @@ function App() {
               <button onClick={() => setSeccion("mapalatitud")}>MAPA</button>
               <button onClick={() => setSeccion("clima")}>CLIMA</button>
               <button onClick={() => setSeccion("usuarios")}>USUARIOS</button>
+              <button onClick={() => setSeccion("categorias")}>CATEGORIAS</button>
 
               <button onClick={logout}>LOGOUT</button>
             </>
@@ -94,6 +96,7 @@ function App() {
         {isLoggedIn && seccion === "mapalatitud" && <MapaLatitud />}
         {isLoggedIn && seccion === "clima" && <Clima />}
         {isLoggedIn && seccion === "usuarios" && <Usuarios />}
+        {isLoggedIn && seccion === "categorias" && <Categorias />}
 
       </main>
 
@@ -105,4 +108,4 @@ function App() {
   );
 }
 
-export default App; 
+export default App;

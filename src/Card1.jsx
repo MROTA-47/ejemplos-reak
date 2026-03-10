@@ -1,16 +1,25 @@
-function Card1() {
+import "./Card.css";
+
+function Card1({ titulo, descripcion }) {
+
   return (
     <div className="card">
+
       <img
         src="https://picsum.photos/300/200"
         alt="imagen"
       />
-      <h3>Título prueba</h3>
+
+      <h3>{titulo}</h3>
+
       <p>
-        Este es un texto de ejemplo para mostrar una tarjeta bien hecha
-        con React y CSS.
+        {descripcion}
       </p>
-      <a href="#">Ver más</a>
+
+      <button>
+        Ver productos
+      </button>
+
     </div>
   );
 }

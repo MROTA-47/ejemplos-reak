@@ -1,0 +1,25 @@
+.categorias-container{
+  padding:40px;
+  color:white;
+}
+
+.categoria-form{
+  display:flex;
+  gap:10px;
+  margin-bottom:20px;
+}
+
+.categoria-form input{
+  padding:8px;
+}
+
+.categoria-form button{
+  background:#00ff88;
+  border:none;
+  padding:8px 15px;
+  cursor:pointer;
+}
+
+.lista-categorias li{
+  margin:10px 0;
+}

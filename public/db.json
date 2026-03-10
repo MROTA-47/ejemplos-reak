@@ -1,0 +1,7 @@
+{
+  "categorias": [
+    { "id": 1, "nombre": "Acción" },
+    { "id": 2, "nombre": "Aventura" },
+    { "id": 3, "nombre": "Shooter" }
+  ]
+}

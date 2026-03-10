@@ -25,6 +25,10 @@ function Encabezado({ cambiarVista }) {
           <button onClick={() => cambiarVista("registrar")}>Registrar Producto</button>
           <button onClick={() => cambiarVista("registrarusuario")}>Registrar Usuario</button>
           <button onClick={() => cambiarVista("carrito")}>Carrito</button>
+
+          {}
+          <button onClick={() => cambiarVista("categorias")}>Categorias</button>
+
         </nav>
 
         <div className="redes">

@@ -120,3 +120,22 @@
   background: #cc0000;
   transform: scale(1.05);
 }
+.categorias-container{
+  padding: 20px;
+  text-align: center;
+}
+
+.categoria-form{
+  margin-bottom: 20px;
+}
+
+.categoria-form input{
+  padding:10px;
+  margin-right:10px;
+}
+
+.cards-container{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap:20px;
+}
