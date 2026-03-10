@@ -1,25 +1,25 @@
+
+
 .categorias-container{
+  width:100%;
+  min-height:100vh;
   padding:40px;
-  color:white;
+  background:#000000;
+  text-align:center;
 }
 
-.categoria-form{
-  display:flex;
-  gap:10px;
-  margin-bottom:20px;
+.categorias-container h2{
+  font-size:32px;
+  margin-bottom:30px;
+  color:#00dd9b;
 }
 
-.categoria-form input{
-  padding:8px;
-}
 
-.categoria-form button{
-  background:#00ff88;
-  border:none;
-  padding:8px 15px;
-  cursor:pointer;
-}
 
-.lista-categorias li{
-  margin:10px 0;
+.cards-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+  max-width:1200px;
+  margin:auto;
 }

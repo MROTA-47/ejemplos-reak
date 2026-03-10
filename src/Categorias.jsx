@@ -1,68 +1,53 @@
 import { useState, useEffect } from "react";
 import "./Categorias.css";
-import api from "./apis/api";
 import Card1 from "./Card1";
 
 function Categorias() {
 
   const [categorias, setCategorias] = useState([]);
-  const [nuevaCategoria, setNuevaCategoria] = useState("");
 
   useEffect(() => {
     cargarCategorias();
   }, []);
 
   const cargarCategorias = async () => {
+
     try {
 
-      const response = await api.get("/products/categories");
+      const response = await fetch(
+        "https://www.themealdb.com/api/json/v1/1/categories.php"
+      );
 
-      console.log("Categorias desde API:", response.data);
+      const data = await response.json();
 
-      setCategorias(response.data);
+      console.log("DATOS API:", data);
+
+      setCategorias(data.categories);
 
     } catch (error) {
-      console.error("Error cargando categorias:", error);
+
+      console.log("Error:", error);
+
     }
-  };
 
-  const agregarCategoria = () => {
-
-    if (nuevaCategoria.trim() === "") return;
-
-    setCategorias([...categorias, nuevaCategoria]);
-
-    setNuevaCategoria("");
   };
 
   return (
     <div className="categorias-container">
 
-      <h2>Categorías de productos</h2>
-
-      <div className="categoria-form">
-
-        <input
-          type="text"
-          placeholder="Nueva categoría"
-          value={nuevaCategoria}
-          onChange={(e) => setNuevaCategoria(e.target.value)}
-        />
-
-        <button onClick={agregarCategoria}>
-          Agregar
-        </button>
-
-      </div>
+      <h2>Categorías </h2>
 
       <div className="cards-container">
 
-        {categorias.map((cat, index) => (
+        {categorias.map((cat) => (
+
           <Card1
-            key={index}
-            titulo={cat}
-            descripcion={"Categoría disponible en la tienda"}
+            key={cat.idCategory}
+            nombre={cat.strCategory}
+            imagen={cat.strCategoryThumb}
+            descripcion={cat.strCategoryDescription}
           />
+
         ))}
 
       </div>

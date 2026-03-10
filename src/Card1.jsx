@@ -1,27 +1,23 @@
 import "./Card.css";
 
-function Card1({ titulo, descripcion }) {
+function Card1({ nombre, imagen, descripcion }) {
 
   return (
     <div className="card">
 
-      <img
-        src="https://picsum.photos/300/200"
-        alt="imagen"
-      />
+      <img src={imagen} alt={nombre} />
 
-      <h3>{titulo}</h3>
+      <h3>{nombre}</h3>
 
       <p>
-        {descripcion}
+        {descripcion.substring(0,100)}...
       </p>
 
-      <button>
-        Ver productos
-      </button>
+      <button>Ver recetas</button>
 
     </div>
   );
+
 }
 
 export default Card1;
